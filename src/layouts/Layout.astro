@@ -59,38 +59,14 @@ import "@fontsource/twinkle-star";
   backDelay: 3000,
 });
 
-const header = document.getElementById('header');
+
 const menu = document.getElementById('menu');
-
-function toggleBlur() {
-    const shouldBlur = window.scrollY > 0;
-    header.classList.toggle('header-blur', shouldBlur);
-}
-
-function adjustHeaderHeight() {
-    const isMenuVisible = !menu.classList.contains('hidden');
-    if (isMenuVisible) {
-        header.style.height = '300px';
-        menu.classList.remove('translate-y-full');
-        menu.classList.add('translate-y-0');
-    } else {
-        header.style.height = ''; // Voltar à altura padrão
-        menu.classList.remove('translate-y-0');
-        menu.classList.add('translate-y-full');
-    }
-}
-
-window.addEventListener('scroll', toggleBlur);
-
 const btn = document.getElementById('btn');
 
 btn.addEventListener('click', function() {
     menu.classList.toggle('hidden');
-    adjustHeaderHeight(); // Chama a função para ajustar a altura do cabeçalho
+    
 });
-
-menu.addEventListener('transitionend', adjustHeaderHeight);
-
 </script>
 
 <style is:global>
