@@ -45,7 +45,6 @@ export default {
 				},
 
 				'.card': {
-					backgroundColor: '#3490dc',
 					borderTopRightRadius: '12px',
 					borderBottomLeftRadius: '12px',
 					

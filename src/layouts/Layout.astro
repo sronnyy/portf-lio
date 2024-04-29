@@ -21,13 +21,13 @@ import "@fontsource/twinkle-star";
 	</head>
 	<body class="relative bg-cover bg-center text-white">
     <div class="relative h-screen">
-      <video autoplay muted loop class="absolute inset-0 object-cover w-full h-full" controls poster="./images/poster.png">
+      <video muted loop class="absolute inset-0 object-cover w-full h-full" poster="./images/poster.png">
         <source src="./videos/leve.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 bg-gradient-to-tr from-black via-opacity-5 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-black via-opacity-5 to-transparent"></div>
       
-      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="absolute inset-0 bg-black opacity-0"></div>
       <div class="relative z-10">
         <slot />
       </div>
@@ -64,17 +64,34 @@ import "@fontsource/twinkle-star";
 });
 
 const header = document.getElementById('header');
+const menu = document.getElementById('menu');
 
-function toggleHeaderBlur() {
-    if (window.scrollY > 0) {
-        header.classList.add('header-blur');
+function toggleBlur() {
+    const shouldBlur = window.scrollY > 0;
+    header.classList.toggle('header-blur', shouldBlur);
+}
+
+function adjustHeaderHeight() {
+    const isMenuVisible = !menu.classList.contains('hidden');
+    if (isMenuVisible) {
+        header.style.height = '300px';
+        menu.style.transform = 'translateY(0)'; // Mostra o menu deslizando de cima para baixo
     } else {
-        header.classList.remove('header-blur');
+        header.style.height = ''; // Voltar à altura padrão
+        menu.style.transform = 'translateY(-100%)'; // Esconde o menu deslizando de volta para cima
     }
 }
 
-// Adiciona um ouvinte de evento para detectar rolagem
-window.addEventListener('scroll', toggleHeaderBlur);
+window.addEventListener('scroll', toggleBlur);
+
+const btn = document.getElementById('btn');
+
+btn.addEventListener('click', function() {
+    menu.classList.toggle('hidden');
+    adjustHeaderHeight(); // Chama a função para ajustar a altura do cabeçalho
+});
+
+menu.addEventListener('transitionend', adjustHeaderHeight);
 
 
 </script>
@@ -125,13 +142,15 @@ window.addEventListener('scroll', toggleHeaderBlur);
 	#header{
 		transition: backdrop-filter 0.3s ease-in-out;
 	}
-	#btn{
+	#toggle{
 		transition: backdrop-filter 0.3s ease-in-out;
 	}
 
+	
 	.header-blur {
     backdrop-filter: blur(10px); 
 }
+
 
 
 </style>
