@@ -19,7 +19,7 @@ import "@fontsource/twinkle-star";
 	</head>
 	<body class="relative bg-cover bg-center text-white">
     <div class="relative h-screen">
-      <video  autoplay muted loop class="hidden md:flex absolute inset-0 object-cover w-full h-screen" poster="./images/poster.png">
+      <video muted loop class="hidden md:flex absolute inset-0 object-cover w-full h-screen" poster="./images/poster.png">
         <source src="./videos/leve.mp4" type="video/mp4">
       </video>
 	  <div class=" md:hidden absolute inset-0 bg-cover bg-center h-screen" style="background-image: url('./images/we.jpeg'); -z-50"></div>
@@ -71,11 +71,12 @@ import "@fontsource/twinkle-star";
         	1024: {
             slidesPerView: 3,
             spaceBetween: 20
-        	}
-       
+        	}      
     }
 });
 
+
+//typed
   const typed = new Typed('#element', {
   strings: ['DESIGN', 'ESTRÁTEGIA' , 'RESULTADO'],
   typeSpeed: 150,
@@ -83,15 +84,22 @@ import "@fontsource/twinkle-star";
   loop: true,
   backDelay: 3000,
 });
+//typed
 
+
+//btn
 
 const menu = document.getElementById('menu');
 const btn = document.getElementById('btn');
 
 btn.addEventListener('click', function() {
-    menu.classList.toggle('hidden');
-    
+  menu.classList.toggle('menu-list');
+  btn.classList.toggle('active'); // Adiciona ou remove a classe 'active' ao botão
 });
+
+//btn
+
+//accordion
 
 document.addEventListener("DOMContentLoaded", function() {
   const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -113,8 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
-
+//accordion
 
 </script>
 
@@ -171,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 1200px; /* Altere este valor para a altura máxima que desejar */
+  max-height: 100px; /* Altere este valor para a altura máxima que desejar */
 }
 
 .fa-chevron-down {
@@ -181,5 +188,40 @@ document.addEventListener("DOMContentLoaded", function() {
 .rotate {
   transform: rotate(180deg); /* Rotacionando a seta para cima */
 }
+  
+  
 
+  @media (max-width: 768px) {
+	.menu{
+		transition: 0.4ms;
+	}
+	.nav{
+		position: absolute;
+		right: -600px;
+		top: 0;
+		transition: 0.8s ease-out;
+  }
+	.nav.menu-list{
+		right: 22px;
+  }
+}
+
+#btn .line {
+  width: 32px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.4s ease-out;
+}
+
+#btn.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 7px);
+}
+
+#btn.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#btn.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -7px);
+}
 </style>
