@@ -100,15 +100,19 @@ document.addEventListener("DOMContentLoaded", function() {
     header.addEventListener('click', function() {
       const accordionItem = this.parentElement;
       const accordionContent = accordionItem.querySelector('.accordion-content');
+      const accordionIcon = this.querySelector('.fa-chevron-down');
 
       if (accordionContent.style.maxHeight) {
         accordionContent.style.maxHeight = null;
+        accordionIcon.classList.remove('rotate'); // Removendo a classe para girar a seta para baixo
       } else {
         accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+        accordionIcon.classList.add('rotate'); // Adicionando a classe para girar a seta para cima
       }
     });
   });
 });
+
 
 
 
@@ -167,7 +171,15 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 1000px; /* Altere este valor para a altura máxima que desejar */
+  max-height: 1200px; /* Altere este valor para a altura máxima que desejar */
+}
+
+.fa-chevron-down {
+  transition: transform 0.4s ease-in-out; /* Adicionando uma transição suave */
+}
+
+.rotate {
+  transform: rotate(180deg); /* Rotacionando a seta para cima */
 }
 
 </style>
