@@ -10,10 +10,10 @@ import "@fontsource/twinkle-star";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Ronny Oliveiraas</title>
+		<title>Ronny Eloy</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="shortcut icon" href="./images/ico.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
 		<link
 			rel="stylesheet"
 			href="../../node_modules/swiper/swiper-bundle.min.css"
@@ -21,7 +21,7 @@ import "@fontsource/twinkle-star";
 	</head>
 	<body class="relative bg-cover bg-center text-white">
     <div class="relative h-screen">
-      <video autoplay muted loop class="absolute inset-0 object-cover w-full h-screen" poster="./images/poster.png">
+      <video  muted loop class="absolute inset-0 object-cover w-full h-screen" poster="./images/poster.png">
         <source src="./videos/leve.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 bg-gradient-to-tr from-black via-opacity-5 to-transparent"></div>
@@ -44,6 +44,7 @@ import "@fontsource/twinkle-star";
 		slidesPerView: 3,
 		spaceBetween: 30,
 		freeMode: true,
+		loop: true,
 		pagination: {
 			el: ".swiper-pagination",
 			clickable: true,
@@ -66,6 +67,7 @@ btn.addEventListener('click', function() {
     menu.classList.toggle('hidden');
     
 });
+
 </script>
 
 <style is:global>
@@ -106,17 +108,6 @@ btn.addEventListener('click', function() {
 		transition: 0.5s ease-in-out;
 	}
 
-	#header{
-		transition: backdrop-filter 0.3s ease-in-out;
-	}
-	#toggle{
-		transition: backdrop-filter 0.3s ease-in-out;
-	}
-
-	
-	.header-blur {
-    backdrop-filter: blur(10px); 
-}
 
 
 
