@@ -97,6 +97,24 @@ btn.addEventListener('click', function() {
   btn.classList.toggle('active'); // Adiciona ou remove a classe 'active' ao botão
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+
+
 //btn
 
 //accordion
@@ -224,4 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
 #btn.active .line:nth-child(3) {
   transform: rotate(-45deg) translate(4px, -7px);
 }
+
+/* Estilize o efeito de desfoque */
+
 </style>
