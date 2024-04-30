@@ -21,14 +21,14 @@ import "@fontsource/twinkle-star";
 	</head>
 	<body class="relative bg-cover bg-center text-white">
     <div class="relative h-screen">
-      <video  autoplay loop class="hidden md:flex absolute inset-0 object-cover w-full h-screen" poster="./images/poster.png">
+      <video  autoplay muted loop class="hidden md:flex absolute inset-0 object-cover w-full h-screen" poster="./images/poster.png">
         <source src="./videos/leve.mp4" type="video/mp4">
       </video>
 	  <div class=" md:hidden absolute inset-0 bg-cover bg-center h-screen" style="background-image: url('./images/we.jpeg'); -z-50"></div>
 	  
-      <div class="absolute inset-0 bg-gradient-to-tr from-black via-opacity-5 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-br from-black via-opacity-5 to-transparent"></div>
-      <div class="absolute inset-0 bg-black opacity-0"></div>
+      <div class="hidden md:flex  absolute inset-0 bg-gradient-to-tr from-black via-opacity-5 to-transparent"></div>
+      <div class="hidden md:flex absolute inset-0 bg-gradient-to-br from-black via-opacity-5 to-transparent"></div>
+      <div class="absolute inset-0 bg-black opacity-90 md:opacity-0"></div>
       <div class="relative z-10">
         <slot />
       </div>
@@ -102,13 +102,30 @@ btn.addEventListener('click', function() {
 
 
 	
-	ul li a{
-		position: relative;
-	}
+	@media (min-width: 768px) { /* Estilos aplicados apenas em telas maiores que 768px */
+    ul li a {
+      position: relative;
+    }
 
-	ul li a::after{
+    ul li a::after {
+      content: "";
+      width: 0%;
+      height: 2px;
+      background-color: #EB3850;
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      border-radius: 2px;
+      transition: 0.5s ease-in-out;
+    }
+
+    ul li a:hover::after {
+      width: 100%;
+    }
+	.list::after {
 		content: "";
-		width: 0%;
+		width: 100%;
 		height: 2px;
 		background-color: #EB3850;
 		position: absolute;
@@ -118,24 +135,7 @@ btn.addEventListener('click', function() {
 		border-radius: 2px;
 		transition: 0.5s ease-in-out;
 	}
-
-	ul li a:hover::after{
-		width: 100%;
-	}
-
-	.list::after{
-		content: "";
-		width: 100%;
-		height: 2px;
-		background-color: #EB3850;
-		position: absolute;
-		bottom: -8px;
-		left: 0;
-		right: 0;
-		border-radius: 2px;
-		transition: 0.5s ease-in-out;
-	}
-
+  }
 	.swiper-wrapper: {
    	 boxSizing: "border-box",
   }

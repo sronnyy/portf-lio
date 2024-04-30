@@ -1,23 +1,38 @@
 ---
 import SlideHA from "./SlideHA.astro";
+import SlideCA from "./SlideCA.astro";
 ---
 
-<section class="w-full h-[700px] bg-primary">
+<section id="port" class="w-full  bg-primary">
   <div class="">
     <div class="container flex justify-center">
       <h1 class="text-2xl p-10 font-albert tracking-[10px] font-bold"> PORTFÓLIO</h1>
     </div>
-    <div class="container  flex flex-col gap-y-4">
-      <div class="font-poppins font-light flex justify-between">
-        <div class="border-b-2 border-gray-500  rounded-br-md w-[130px] flex justify-start">
-          <h3 class="text-md font-light text-center">Hamburgueria</h3>
+  
+    <div class=" flex flex-col gap-20"> <!-- SLIDE CONTAINER -->
+      <div class="container  flex flex-col gap-y-4">
+        <div class="font-poppins font-light flex justify-between items-center">
+          <div class="border-b border-gray-500  rounded-br-md w-[120px] flex justify-start">
+            <h3 class="text-md font-medium text-center">Hamburgueria</h3>
+          </div>
+          <h4 class="text-[10px] font-light" >By: RonnyD</h4>
         </div>
-        
-        <h3>By: Ronny Dsgn</h3>
+        <div class="">
+          <SlideHA/>
+        </div>    
       </div>
-      <div class="">
-        <SlideHA/>
-      </divc>
+      
+      <div class="container  flex flex-col gap-y-4">
+        <div class="font-poppins font-light flex justify-between items-center">
+          <div class="border-b border-gray-500  rounded-br-md w-[86px] flex justify-start">
+            <h3 class="text-md font-medium text-center">Cafeteria</h3>
+          </div>
+          <h4 class="text-[10px] font-light">By: Ronny Dsgn</h4>
+        </div>
+        <div class="">
+          <SlideCA/>
+        </div>    
+      </div>
     </div>
   </div>
 </section>

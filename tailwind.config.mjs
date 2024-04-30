@@ -47,6 +47,8 @@ export default {
 				'.card': {
 					borderTopRightRadius: '12px',
 					borderBottomLeftRadius: '12px',
+					borderTopleftRadius: '6px',
+					borderBottomRightRadius: '6px',
 					
 				},
 
