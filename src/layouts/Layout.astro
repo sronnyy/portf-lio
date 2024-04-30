@@ -41,8 +41,8 @@ import "@fontsource/twinkle-star";
   	import Typed from 'typed.js';
 
 	  var swiper = new Swiper(".mySwiper", {
-    	slidesPerView: 3,
-  	  	spaceBetween: 30,
+    	slidesPerView: 4,
+  	  	spaceBetween: 20,
     	freeMode: true,
     	loop: true,
     	autoplay: {
@@ -58,18 +58,18 @@ import "@fontsource/twinkle-star";
     	breakpoints: {
         	// Quando a largura da tela for 640 pixels ou menos
         	140: {
-            	slidesPerView: 1,
+            	slidesPerView: 2,
             	spaceBetween: 10
         	},
         
         	768: {
-           		slidesPerView: 2,
+           		slidesPerView: 3,
             	spaceBetween: 20
         	},
        
         	1024: {
-            slidesPerView: 3,
-            spaceBetween: 30
+            slidesPerView: 4,
+            spaceBetween: 20
         	}
        
     }
@@ -132,7 +132,9 @@ btn.addEventListener('click', function() {
 		transition: 0.5s ease-in-out;
 	}
 
-
+	.swiper-wrapper: {
+   	 boxSizing: "border-box",
+  }
 
 
 </style>
