@@ -2,7 +2,7 @@
 
 <section class="container h-screen flex justify-center">
     <div class="flex flex-col justify-center items-center">
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center gap-10">
         <div class="flex flex-col items-center md:flex md:flex-col md:gap-6">
           <h1 class="text-4xl font-poppins font-bold md:hidden">RONNY</h1>
           <h1 class="text-7xl font-poppins font-bold md:text-7xl md:hidden">
@@ -15,14 +15,15 @@
             <h1 class="tracking-[10px] font-roboto" id="element"></h1>
           </div>
         </div>
-        <p class="text-center mt-9 md:mt-15 md:w-[680px] font-poppins font-extralight md:text-[18px] container" >
+        <p class="text-center md:w-[680px] font-poppins font-extralight md:text-lg container" >
           Design e desenvolvimento de sites, criando espaços digitais e
           experiências fluidas.
         </p>
 
-        <a href="/contacts">
-          <div class="bg-second transition duration-300 w-48 h-12 text-2xl font-poppins flex items-center justify-center rounded-md mt-10 font-medium md:hover:bg-transparent md:hover:border border-white cursor-pointer">    <h1>Contato</h1></div>
-        </a>
+        <div class="flex items-center border-2 border-red-500 group relative overflow-hidden rounded-sm">
+          <a class="px-10 py-2 transition-all duration-1000 md:text-xl " href="">Contato</a>
+          <span class="absolute h-16 -bottom-0 w-[20rem] group-hover:bottom-[-5rem] transition-all duration-700 ease-in-out bg-red-500 -z-10 "></span>   
+        </div>
       </div>
     </div>
   

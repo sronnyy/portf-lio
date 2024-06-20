@@ -1,60 +1,52 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-	"./node_modules/flowbite/**/*.js"
- 		],
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		'./node_modules/flowbite/**/*.js'
+	],
 	theme: {
 		extend: {
 			container: {
 				center: true,
 				padding: {
-					sm: '1rem',
-					md: '0'
+				sm: '1rem',
+				md: '0'
 				},
 			},
+
 			fontFamily: {	
+				cor: 'CormorantGaramond',
 				poppins: 'Poppins',
-				albert: 'Albert Sans',
-				roboto: 'Roboto',
 			},
 			colors: {
-				primary: '#000000',
-				second: '#EB3850',
-				shape: '#3333',
+				section: '#f8fcff',
+				orange: '#FF3D0C',
+				offwhite: '#F7F7F7',
+				offblack: '#4A4A4A',
+        		primary: '#040404',
 			},
 		},
 	},
 	plugins: [
 		require('flowbite/plugin'),
 		function ({ addComponents }) {
-			addComponents({
-				'.container': {
-					maxWidth: '90%',
-					'@screen sm': {
-						maxWidth: '640px',
-					},
-					'@screen md': {
-						maxWidth: '768px',
-					},
-					'@screen lg': {
-						maxWidth: '1024px',
-					},
-					'@screen xl': {
-						maxWidth: '1280px',
-					},
-				},
-
-				'.card': {
-					borderTopRightRadius: '12px',
-					borderBottomLeftRadius: '12px',
-					borderTopleftRadius: '6px',
-					borderBottomRightRadius: '6px',
-					
-				},
-
-			});
+		  addComponents({
+			'.container': {
+			  maxWidth: '90%',
+			  '@screen sm': {
+				maxWidth: '640px',
+			  },
+			  '@screen md': {
+				maxWidth: '768px',
+			  },
+			  '@screen lg': {
+				maxWidth: '1024px',
+			  },
+			  '@screen xl': {
+				maxWidth: '1280px',
+			  },
+			}
+		  })
 		},
-
 	],
-};
-
+}
