@@ -1,20 +1,32 @@
+---
+import Services from "./Services.astro";
+---
 
-
-
-
-
-<div class="swiper mySwiper1">
-  <div class="swiper-wrapper h-[36rem]">
-    <div class="swiper-slide bg-cover bg-center rounded-sm bg-[url('/images/back.png')]"></div>
-    <div class="swiper-slide bg-cover bg-center rounded-sm bg-[url('/images/back.png')]"></div>
-    <div class="swiper-slide bg-cover bg-center rounded-sm bg-[url('/images/back.png')]"></div>
+<div class="w-full relative">
+  <div class="swiper mySwiper1">
+    <div class="swiper-wrapper h-[30rem] ">
+  
+      <div class="swiper-slide bg-[url('/images/back.png')] bg-cover bg-center"></div>
+      <div class="swiper-slide bg-[url('/images/back.png')] bg-cover bg-center"></div>
+  
+    </div>
   </div>
-  <div class="swiper-pagination"></div>
+  <div class="absolute bottom-8 left-14 flex justify-center md:px-0 lg:px-0 text-2xl z-40 ">
+    
+    <div class="w-20 flex justify-between">
+      <div class="button-prev flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -ml-6 rounded-xl">
+        <i class="fa-solid fa-chevron-left lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"></i>
+      </div>
+  
+      <div class="button-next flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -mr-6 rounded-xl">
+        <i class="fa-solid fa-chevron-right lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"></i>
+      </div>
+    </div>
 </div>
 
 
 <script>
-  import Swiper from "swiper";
+  import Swiper from "swiper/bundle";
 
   var swiper1 = new Swiper(".mySwiper1", {
     slidesPerView: 1,
@@ -29,6 +41,12 @@
       clickable: true,
     },
     speed: 2000,
+
+
+    navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
  
   });
 </script>

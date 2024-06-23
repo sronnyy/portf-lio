@@ -1,0 +1,29 @@
+---
+interface Props {
+  image: string;
+  title: string;
+  paragraph: string;
+
+}
+
+const {image, title, paragraph} = Astro.props;
+---
+
+
+
+<div class="h-full font-poppins" >
+  <div class="swiper-slide bg-cover bg-center rounded-lg grid group" style={{backgroundImage: `url('/images/${image}')`}}>
+    <a href="" class="self-end  relative z-30 transition-all duration-300 ease-out text-offwhite">
+      <div class="flex justify-between font-medium uppercase">
+        <p class="flex-grow p-4 bg-white text-offblack">{title}</p>
+        <span class="flex justify-center items-center text-[1.2rem] bg-white text-offblack lg:group-hover:bg-orange/90 lg:group-hover:text-white transition-all duration-300 p-4">
+          <i class="fa-solid fa-chevron-right"></i>
+        </span>
+      </div>
+
+      <div class="text-offblack max-h-0 lg:group-hover:max-h-96 transition-all duration-700 ease-in-out font-light">
+        <div class="p-6 bg-white">{paragraph}</div>
+      </div>   
+    </a>
+  </div>
+</div>

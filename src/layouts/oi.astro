@@ -1,5 +1,4 @@
 ---
-const { title } = Astro.props;
 import "@fontsource/twinkle-star";
 ---
 
@@ -11,38 +10,36 @@ import "@fontsource/twinkle-star";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Ronny Oliveira</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="stylesheet"
-			href="../../node_modules/swiper/swiper-bundle.min.css"
-		/>
+		<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 	<body class="relative bg-cover bg-center text-white">
-		 <div class=" md:hidden relative bg-cover bg-center h-screen" style="background-image: url('./images/we.jpeg');">
-			<div class="absolute inset-0 bg-black opacity-95 "></div>
-			<div class="relative z-10">
-				<slot />
-			</div>
-		</div>
+    <div class="relative h-screen">
+      <video muted loop class="hidden md:flex absolute inset-0 object-cover w-full h-screen" poster="./images/poster.png">
+        <source src="./videos/leve.mp4" type="video/mp4">
+      </video>
+	  <div class=" md:hidden absolute inset-0 bg-cover bg-center h-screen" style="background-image: url('./images/we.jpeg'); -z-50"></div>
+	  
+      <div class="hidden md:flex  absolute inset-0 bg-gradient-to-tr from-black via-opacity-5 to-transparent"></div>
+      <div class="hidden md:flex absolute inset-0 bg-gradient-to-br from-black via-opacity-5 to-transparent"></div>
+      <div class="absolute inset-0 bg-black opacity-90 md:opacity-0"></div>
+      <div class="relative z-10">
+        <slot />
+      </div>
+    </div>
 	</body>
 </html>
+
+
 <script>
 	import "flowbite";
-	import Swiper from "swiper";
-  import Typed from 'typed.js';
+  import Typed from 'typed.js'
 
-	var swiper = new Swiper(".mySwiper", {
-		slidesPerView: 3,
-		spaceBetween: 30,
-		freeMode: true,
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-	});
-
+//typed
   const typed = new Typed('#element', {
   strings: ['DESIGN', 'ESTRÁTEGIA' , 'RESULTADO'],
   typeSpeed: 150,
@@ -50,12 +47,56 @@ import "@fontsource/twinkle-star";
   loop: true,
   backDelay: 3000,
 });
+//typed
+
+//accordion
+
+document.addEventListener("DOMContentLoaded", function() {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const accordionItem = this.parentElement;
+      const accordionContent = accordionItem.querySelector('.accordion-content');
+      const accordionIcon = this.querySelector('.fa-chevron-down');
+
+      if (accordionContent.style.maxHeight) {
+        accordionContent.style.maxHeight = null;
+        accordionIcon.classList.remove('rotate'); // Removendo a classe para girar a seta para baixo
+      } else {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+        accordionIcon.classList.add('rotate'); // Adicionando a classe para girar a seta para cima
+      }
+    });
+  });
+});
+
+//accordion
+
 </script>
 
-<style>
+<style is:global>
 	@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-  
 
-    
+
+.accordion-content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 100px; /* Altere este valor para a altura máxima que desejar */
+}
+
+.fa-chevron-down {
+  transition: transform 0.4s ease-in-out; /* Adicionando uma transição suave */
+}
+
+.rotate {
+  transform: rotate(180deg); /* Rotacionando a seta para cima */
+}
+  
 </style>

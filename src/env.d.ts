@@ -21,5 +21,31 @@ declare module 'aos' {
       constructor(elementId: string | HTMLElement, options: Record<string, any>);
     }
   }
+
+  declare module 'lenis' {
+    export interface LenisEvent {
+        scrollY: number;
+        // Add other properties you expect here
+    }
+
+    interface LenisOptions {
+        duration?: number;
+        easing?: (t: number) => number;
+        orientation?: 'vertical' | 'horizontal';
+        gestureOrientation?: 'vertical' | 'horizontal';
+        smoothWheel?: boolean;
+        wheelMultiplier?: number;
+        touchMultiplier?: number;
+        infinite?: boolean;
+    }
+
+    class Lenis {
+        constructor(options?: LenisOptions);
+        on(event: 'scroll', callback: (e: LenisEvent) => void): void;
+        raf(time: number): void;
+    }
+
+    export default Lenis;
+}
   
   

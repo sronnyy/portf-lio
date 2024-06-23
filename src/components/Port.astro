@@ -3,24 +3,21 @@ import Slide from "./Slide.astro";
 import Star from "./Star.astro";
 ---
 
-<section id="port" class="w-full bg-primary">
+<section id="port" class="w-full bg-offwhite">
   <div class="flex flex-col gap-10 py-20">
-    <div class="container flex justify-center">
-      <h1 class="text-4xl font-albert tracking-widest font-light uppercase">
-        portfólio
+    <div class="container flex flex-col items-center gap-2">
+      <h1 class="text-4xl text-offblack font-albert tracking-widest font-medium uppercase font-poppins">
+        Serviços
       </h1>
+      <div class="bg-offblack w-52 h-[2px] rounded-md"></div>
     </div>
 
     <div class="flex flex-col gap-16">
-      <div class="bg-primary container">
-        <Star/>
-      </div>
-  
+
       <div class="flex flex-col">
         <div class="container flex flex-col gap-4">
           <div class="font-poppins font-light flex justify-between items-center">
-            <div
-              class="border-b border-gray-500 rounded-br-md w-[126px] flex justify-start">
+            <div class="text-offblack border-b border-offblack">
               <h3 class="text-md font-light tracking-wide text-center">
                 Social media
               </h3>
@@ -28,15 +25,73 @@ import Star from "./Star.astro";
             <h4 class="text-[10px] font-extralight">By: RonnyD</h4>
           </div>
           <div class="">
-            <Slide
-              image="miniatura.png"
-              imageOne="we.jpeg"
-              imageTwo="we.jpeg"
-              imageThree="we.jpeg"
-            />
+            <Slide />
           </div>
         </div>
       </div>
+      
+      <div class="container grid grid-cols-2 ">
+        <div>
+          <div class="w-full relative">
+            <div class="swiper mySwiper1">
+              <div class="swiper-wrapper h-[30rem] ">
+            
+                <div class="swiper-slide bg-[url('/images/back.png')] bg-cover bg-center"></div>
+                <div class="swiper-slide bg-[url('/images/back.png')] bg-cover bg-center"></div>
+            
+              </div>
+            </div>
+            <div class="absolute bottom-8 left-14 flex justify-center md:px-0 lg:px-0 text-2xl z-40 ">
+              
+              <div class="w-20 flex justify-between">
+                <div class="button-prev flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -ml-6 rounded-xl">
+                  <i class="fa-solid fa-chevron-left lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"></i>
+                </div>
+            
+                <div class="button-next flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -mr-6 rounded-xl">
+                  <i class="fa-solid fa-chevron-right lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"></i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class=" bg-red-200">
+          aaa
+        </div>
+        <div class=" bg-red-200">
+          bbb
+        </div>
+        
+      </div>
+
     </div>
   </div>
 </section>
+
+
+
+<script>
+  import Swiper from "swiper/bundle";
+
+  var swiper1 = new Swiper(".mySwiper1", {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 20,
+    autoplay: {
+    delay: 2000,
+    disableOnInteraction: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    speed: 2000,
+
+
+    navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
+ 
+  });
+</script>

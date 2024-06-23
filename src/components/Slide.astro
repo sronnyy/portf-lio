@@ -1,89 +1,45 @@
 ---
-interface Props {
-  image: string;
-  imageOne: string;
-  imageTwo: string;
-  imageThree: string;
-}
-
-const {image, imageOne, imageTwo, imageThree} = Astro.props;
+import Services from "./Services.astro";
 ---
 
 
 
 
 <div class="swiper mySwiper">
-  <div class="swiper-wrapper h-96">
-    <div class="swiper-slide bg-cover bg-center rounded-sm grid group" style={{backgroundImage: `url('/images/${image}')`}}>
-      <a href="" class="self-end relative z-30 transition-all duration-300 ease-out text-offwhite">
-        <div class="flex justify-between font-semibold uppercase">
-          <p class="flex-grow p-4 bg-orange/90">Hamburguerias</p>
-          <span class="flex justify-center items-center text-[1.2rem] bg-gray-100 text-orange lg:group-hover:bg-orange/90 lg:group-hover:text-white transition-all duration-300 p-4">
-            <i class="fa-solid fa-chevron-right"></i>
-          </span>
-        </div>
-  
-        <div class="text-offblack max-h-0 lg:group-hover:max-h-96 transition-all duration-700 ease-in-out font-light">
-          <div class="p-6 bg-offwhite">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ea laboriosam quis non quam quasi? Amet numquam nobis doloremque culpa provident, sunt animi totam earum aliquid obcaecati. Totam, commodi eos!
-          </div>
-        </div>   
-      </a>
+  <div class="swiper-wrapper h-96 ">
+
+    <div class="swiper-slide">
+      <Services
+      image="miniatura.png"
+      title="Hamburguerias"
+      paragraph=" lorem "
+      />
+    </div>
+    <div class="swiper-slide">
+      <Services
+      image="miniatura.png"
+      title="Hamburguerias"
+      paragraph=" lorem "
+      />
     </div>
 
-    <div class="swiper-slide bg-cover bg-center rounded-sm grid group" style={{backgroundImage: `url('/images/${imageOne}')`}}>
-      <a href="" class="self-end relative z-30 transition-all duration-300 ease-out text-offwhite">
-        <div class="flex justify-between font-semibold uppercase">
-          <p class="flex-grow p-4 bg-orange/90">Hamburguerias</p>
-          <span class="flex justify-center items-center text-[1.2rem] bg-gray-100 text-orange lg:group-hover:bg-orange/90 lg:group-hover:text-white transition-all duration-300 p-4">
-            <i class="fa-solid fa-chevron-right"></i>
-          </span>
-        </div>
-  
-        <div class="text-offblack max-h-0 lg:group-hover:max-h-96 transition-all duration-700 ease-in-out font-light">
-          <div class="p-6 bg-offwhite">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ea laboriosam quis non quam quasi? Amet numquam nobis doloremque culpa provident, sunt animi totam earum aliquid obcaecati. Totam, commodi eos!
-          </div>
-        </div>   
-      </a>
+    <div class="swiper-slide">
+      <Services
+      image="miniatura.png"
+      title="Hamburguerias"
+      paragraph=" lorem "
+      />
     </div>
 
-    <div class="swiper-slide bg-cover bg-center rounded-sm grid group" style={{backgroundImage: `url('/images/${imageTwo}')`}}>
-      <a href="" class="self-end relative z-30 transition-all duration-300 ease-out text-offwhite">
-        <div class="flex justify-between font-semibold uppercase">
-          <p class="flex-grow p-4 bg-orange/90">Hamburguerias</p>
-          <span class="flex justify-center items-center text-[1.2rem] bg-gray-100 text-orange lg:group-hover:bg-orange/90 lg:group-hover:text-white transition-all duration-300 p-4">
-            <i class="fa-solid fa-chevron-right"></i>
-          </span>
-        </div>
-  
-        <div class="text-offblack max-h-0 lg:group-hover:max-h-96 transition-all duration-700 ease-in-out font-light">
-          <div class="p-6 bg-offwhite">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ea laboriosam quis non quam quasi? Amet numquam nobis doloremque culpa provident, sunt animi totam earum aliquid obcaecati. Totam, commodi eos!
-          </div>
-        </div>   
-      </a>
-    </div>
-
-    <div class="swiper-slide bg-cover bg-center rounded-sm grid group" style={{backgroundImage: `url('/images/${imageThree}')`}}>
-      <a href="" class="self-end relative z-30 transition-all duration-300 ease-out text-offwhite">
-        <div class="flex justify-between font-semibold uppercase">
-          <p class="flex-grow p-4 bg-orange/90">Hamburguerias</p>
-          <span class="flex justify-center items-center text-[1.2rem] bg-gray-100 text-orange lg:group-hover:bg-orange/90 lg:group-hover:text-white transition-all duration-300 p-4">
-            <i class="fa-solid fa-chevron-right"></i>
-          </span>
-        </div>
-  
-        <div class="text-offblack max-h-0 lg:group-hover:max-h-96 transition-all duration-700 ease-in-out font-light">
-          <div class="p-6 bg-offwhite">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ea laboriosam quis non quam quasi? Amet numquam nobis doloremque culpa provident, sunt animi totam earum aliquid obcaecati. Totam, commodi eos!
-          </div>
-        </div>   
-      </a>
+    <div class="swiper-slide">
+      <Services
+      image="miniatura.png"
+      title="Hamburguerias"
+      paragraph=" lorem "
+      />
     </div>
     
   </div>
-  <div class="swiper-pagination"></div>
 </div>
 
 
