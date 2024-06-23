@@ -48,4 +48,17 @@ declare module 'aos' {
     export default Lenis;
 }
   
+
+declare module 'simple-parallax-js' {
+  interface SimpleParallaxOptions {
+    scale?: number;
+    
+  }
+
+  export default class SimpleParallax {
+    constructor(elements: HTMLElement | HTMLElement[], options?: SimpleParallaxOptions);
+    refresh(): void;
+    destroy(): void;
+  }
+}
   

@@ -4,76 +4,89 @@ import Star from "./Star.astro";
 ---
 
 <section id="port" class="w-full bg-offwhite">
-  <div class="flex flex-col gap-10 py-20">
-    <div class="container flex flex-col items-center gap-2">
-      <h1
-        class="text-4xl text-offblack font-albert tracking-widest font-medium uppercase font-poppins"
-      >
-        Serviços
-      </h1>
-      <div class="bg-offblack w-52 h-[2px] rounded-md"></div>
+  <div class="flex flex-col gap-10">
+    <div class="flex flex-col gap-14 py-14">
+      <div class="container flex flex-col items-center gap-2">
+        <h1
+          class="text-4xl text-offblack font-albert tracking-widest font-medium uppercase font-poppins"
+        >
+          Serviços
+        </h1>
+        <div class="bg-offblack w-52 h-[2px] rounded-md"></div>
+      </div>
+  
+      <div class="flex flex-col gap-16">
+        <div class="flex flex-col">
+          <div class="container flex flex-col gap-4">
+            <div
+              class="font-poppins font-light flex justify-between items-center"
+            >
+              <div class="text-offblack border-b border-offblack">
+                <h3 class="text-md font-light tracking-wide text-center">
+                  Social media
+                </h3>
+              </div>
+              <h4 class="text-[10px] font-extralight text-offblack">By: RonnyD</h4>
+            </div>
+            <div class="">
+              <Slide />
+            </div>
+          </div>
+        </div>
+  
+      </div>
     </div>
 
-    <div class="flex flex-col gap-16">
-      <div class="flex flex-col">
-        <div class="container flex flex-col gap-4">
-          <div
-            class="font-poppins font-light flex justify-between items-center"
-          >
-            <div class="text-offblack border-b border-offblack">
-              <h3 class="text-md font-light tracking-wide text-center">
-                Social media
-              </h3>
+    <div class="w-full bg-white ">
+      <div class="bg-offwhite 2-full h-8 rounded-b-[14rem]"></div>
+      <div class="py-20 w-full">
+        <div class="shadow-xl lg:grid lg:grid-cols-2 container rounded-lg">
+          <div>
+            <div class="relative">
+              <div class="swiper mySwiper1">
+                <div class="swiper-wrapper h-[36rem] ">
+                  <div id="1" class="rounded-lg swiper-slide bg-[url('/images/fruvita.png')] bg-cover bg-center relative p-8">
+                    <h1 class="md:hidden absolute font-semibold font-poppins tracking-wide bg-white text-offblack px-10 py-2 rounded-lg">Fruvita</h1>
+                  </div>
+                  <div id="2" class="rounded-lg swiper-slide bg-[url('/images/back.png')] bg-cover bg-center relative">
+                    <h1 class="md:hidden absolute font-semibold font-poppins tracking-wide bg-white text-offblack px-10 py-2 rounded-lg">Sky</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute bottom-8 left-14 flex justify-center md:px-0 lg:px-0 text-2xl z-40">
+                <div class="w-20 flex justify-between">
+                  <div class="button-prev flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -ml-6 rounded-xl">
+                    <i class="fa-solid fa-chevron-left lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"></i>
+                  </div>
+                  <div class="button-next flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -mr-6 rounded-xl">
+                    <i class="fa-solid fa-chevron-right lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h4 class="text-[10px] font-extralight">By: RonnyD</h4>
           </div>
-          <div class="">
-            <Slide />
-          </div>
-        </div>
-      </div>
 
-      <div class="bg-red-400 grid grid-cols-2 container">
-        <div>
-          <div class="relative">
-            <div class="swiper mySwiper1">
-              <div class="swiper-wrapper h-[36rem]">
-                <div
-                  id="1"
-                  class="swiper-slide bg-[url('/images/fruvita.png')] bg-cover bg-center"
-                >
-                </div>
-                <div
-                  id="2"
-                  class="swiper-slide bg-[url('/images/back.png')] bg-cover bg-center"
-                >
-                </div>
+          <div class="hidden md:block">
+            <div class="div-a px-14 py-28 ">
+              <div class="text-offblack flex flex-col gap-8 font-poppins">
+                <h1 class="text-6xl font-semibold tracking-wide">Fruvita</h1>
+                <p class="font-light text-sm leading-8 border-l-4 border-orange pl-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo optio maxime, facilis quos modi eligendi magnam itaque. Ex, eius aspernatur? </p>
               </div>
+    
+              <a class="inline-block mt-10 px-10 py-2 bg-offblack border rounded-md border-offblack hover:bg-white hover:text-offblack transition-all duration-300" href=""> Faça seu Orçamento </a>
             </div>
-            <div
-              class="absolute bottom-8 left-14 flex justify-center md:px-0 lg:px-0 text-2xl z-40"
-            >
-              <div class="w-20 flex justify-between">
-                <div
-                  class="button-prev flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -ml-6 rounded-xl"
-                >
-                  <i
-                    class="fa-solid fa-chevron-left lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"
-                  ></i>
-                </div>
-                <div
-                  class="button-next flex items-center p-4 cursor-pointer group bg-white group lg:hover:bg-offblack transition-all shadow-lg duration-300 -mr-6 rounded-xl"
-                >
-                  <i
-                    class="fa-solid fa-chevron-right lg:group-hover:scale-125 text-offblack lg:group-hover:text-white transition-all duration-1000"
-                  ></i>
-                </div>
+            
+            <div class="hidden div-b px-14 py-28 ">
+              <div class="text-offblack flex flex-col gap-8 font-poppins">
+                <h1 class="text-6xl font-semibold tracking-wide">Sky</h1>
+                <p class="font-light text-sm leading-8 border-l-4 border-orange pl-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo optio maxime, facilis quos modi eligendi magnam itaque. Ex, eius aspernatur? </p>
               </div>
+    
+              <a class="inline-block mt-10 px-10 py-2 bg-offblack border rounded-md border-offblack hover:bg-white hover:text-offblack transition-all duration-300" href=""> Faça seu Orçamento </a>
             </div>
           </div>
+
         </div>
-        <div class="div-a">a</div>
-        <div class="hidden div-b">b</div>
       </div>
     </div>
   </div>
@@ -81,50 +94,76 @@ import Star from "./Star.astro";
   <script>
     import Swiper from "swiper/bundle";
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const [divA, divB, buttonPrev, buttonNext] = [
-        ".div-a",
-        ".div-b",
-        ".button-prev",
-        ".button-next",
-      ].map((selector) => document.querySelector(selector) as HTMLElement);
+document.addEventListener("DOMContentLoaded", () => {
+  const [divA, divB, buttonPrev, buttonNext] = [
+    ".div-a",
+    ".div-b",
+    ".button-prev",
+    ".button-next",
+  ].map((selector) => document.querySelector(selector) as HTMLElement);
 
-      const swiper1 = new Swiper(".mySwiper1", {
-        slidesPerView: 1,
-        loop: true,
-        spaceBetween: 20,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        speed: 2000,
-        navigation: {
-          nextEl: ".button-next",
-          prevEl: ".button-prev",
-        },
-      });
+  const swiper1 = new Swiper(".mySwiper1", {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    speed: 2000,
+    navigation: {
+      nextEl: ".button-next",
+      prevEl: ".button-prev",
+    },
+  });
 
-      const updateSlideState = () => {
-        const isFirstSlide = swiper1.activeIndex === 0;
-        const isLastSlide = swiper1.activeIndex === swiper1.slides.length - 1;
+  const updateSlideState = () => {
+    const isFirstSlide = swiper1.activeIndex === 0;
+    const isLastSlide = swiper1.activeIndex === swiper1.slides.length - 1;
 
-        divA.classList.toggle("hidden", !isFirstSlide);
-        divB.classList.toggle("hidden", isFirstSlide);
-        buttonPrev.classList.toggle("pointer-events-none", isFirstSlide);
-        buttonNext.classList.toggle("pointer-events-none", isLastSlide);
+    if (isFirstSlide) {
+      // Se for o primeiro slide, faz a transição da div-b para a div-a
+      divB.style.transition = "opacity 0.2s ease-in-out, transform 1s ease-in-out";
+      divB.style.opacity = "0";
+      divB.style.transform = "translateX(14%)";
+      setTimeout(() => {
+        divB.classList.add("hidden");
+        divA.classList.remove("hidden");
+        setTimeout(() => {
+          divA.style.opacity = "1";
+          divA.style.transform = "translateX(0)";
+        }, 10); // Aguarda um curto período antes de aplicar o fade-in
+      }, 20); // Aguarda 1 segundo antes de mostrar a div-a
+    } else {
+      // Se for o último slide, faz a transição da div-a para a div-b
+      divA.style.transition = "opacity 0.2s ease-in-out, transform 1s ease-in-out";
+      divA.style.opacity = "0";
+      divA.style.transform = "translateX(-14%)";
+      setTimeout(() => {
+        divA.classList.add("hidden");
+        divB.classList.remove("hidden");
+        setTimeout(() => {
+          divB.style.opacity = "1";
+          divB.style.transform = "translateX(0)";
+        }, 20); // Aguarda um curto período antes de aplicar o fade-in
+      }, 10); // Aguarda 1 segundo antes de mostrar a div-b
+    }
 
-        buttonPrev.style.opacity = isFirstSlide ? "0.5" : "1";
-        buttonNext.style.opacity = isLastSlide ? "0.5" : "1";
-      };
+    // Atualiza o estado dos botões de navegação
+    buttonPrev.classList.toggle("pointer-events-none", isFirstSlide);
+    buttonNext.classList.toggle("pointer-events-none", isLastSlide);
+    buttonPrev.style.opacity = isFirstSlide ? "0.5" : "1";
+    buttonNext.style.opacity = isLastSlide ? "0.5" : "1";
+  };
 
-      swiper1.on("slideChange", updateSlideState);
-      swiper1.on("reachBeginning", () =>
-        buttonPrev.classList.add("pointer-events-none")
-      );
-      swiper1.on("reachEnd", () =>
-        buttonNext.classList.add("pointer-events-none")
-      );
-      updateSlideState();
-    });
+  swiper1.on("slideChange", updateSlideState);
+  swiper1.on("reachBeginning", () =>
+    buttonPrev.classList.add("pointer-events-none")
+  );
+  swiper1.on("reachEnd", () =>
+    buttonNext.classList.add("pointer-events-none")
+  );
+  updateSlideState();
+});
   </script>
 </section>

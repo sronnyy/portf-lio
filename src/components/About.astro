@@ -1,16 +1,45 @@
-<section id="about" class="w-full bg-black py-20">
-    <div class="pt-20">
-        <div class="relative w-full h-40 md:h-52 bg-cover bg-center" style="background-image: url('/images/about.png');">
-            <!-- Overlay -->
-            <div class="absolute inset-0 bg-black opacity-75"></div>
-            <div class="absolute inset-0 flex justify-center items-center">
-                <h1 class="font-light font-poppins text-2xl md:text-2xl text-white">Sobre</h1>
-            </div>
-        </div>
+<section id="about" class="w-full bg-black">
+    <div class="bg-white w-full h-6 rounded-b-[14rem]"></div>
+
+
+  <div class="py-32">
+    <div class="">
+      
+      <div class=" w-full h-48 container relative">
+        <div class="bg-black/70 absolute z-20 w-full h-full rounded-3xl"></div>
+        <div class="thumbnail rounded-3xl bg-[url('/images/about.png')] bg-center bg-cover w-full h-full bg-fixed relative flex items-center justify-center text-4xl font-poppins"> <h1 class="relative z-40">Sobre</h1> </div>
+      </div>
     </div>
 
-    <div class="container mt-10 flex flex-col items-center gap-8">
-        <div class="flex items-center text-center" > <p class="leading-loose flex items-center text-sm md:text-lg font-extralight font-poppins">Designer e desenvolvedor dedicado, com anos de experiência, capacitando empresas e profissionais para se destacarem em um mercado competitivo. Meu foco vai além da estética impressionante; busco alcançar resultados por meio de design estratégico e singular.</p> </div>
-        <a class="px-8 py-2 border border-red-500 bg-red-500" href="">Desenvolver meu Projeto</a>
+    <div class="container flex flex-col items-center gap-8">
+      <div class="flex items-center text-center" > <p class="leading-loose flex items-center text-sm md:text-lg font-extralight font-poppins">Designer e desenvolvedor dedicado, com anos de experiência, capacitando empresas e profissionais para se destacarem em um mercado competitivo. Meu foco vai além da estética impressionante; busco alcançar resultados por meio de design estratégico e singular.</p> </div>
+      <a class="px-8 py-2 border border-red-500 bg-red-500" href="">Desenvolver meu Projeto</a>
     </div>
+  </div>
   </section>
+
+
+
+
+  
+  <script>
+
+    import SimpleParallax from 'simple-parallax-js';
+
+    // Selecionando os elementos com a classe 'thumbnail'
+    const images = document.querySelectorAll('.thumbnail');
+
+    // Iterando sobre os elementos e aplicando o efeito de parallax individualmente
+    images.forEach(image => {
+      // Verificando se o elemento é realmente um HTMLElement antes de aplicar o efeito de parallax
+      if (image instanceof HTMLElement) {
+        // Aplicando o efeito de parallax em cada imagem
+        new SimpleParallax(image, {
+          scale: 1.5,
+        });
+
+        // Adicionando um console log para verificar se está funcionando
+        console.log('Efeito de parallax aplicado à imagem:', image);
+      }
+    });
+  </script>

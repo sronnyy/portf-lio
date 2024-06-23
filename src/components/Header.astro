@@ -1,20 +1,19 @@
 <header class=" text-white items-center w-full md:overflow-hidden z-50 transition-all absolute">
 
-  <div id="header" class="w-full relative">
+  <div id="header" class="w-full relative container right-0 left-0 px-10 rounded-xl">
 
-
-       
       <div  class=" flex justify-between flex-wrap md:flex-nowrap items-center h-28 w-full container ">
 
-        <img class="h-full p-6" src="/images/logo.png" alt="">
+        <div class="flex w-full justify-between md:justify-normal items-center md:gap-20">
+          <img class="w-16" src="/images/logo.png" alt="">
 
-        <div id="open"  class="flex flex-col gap-[5px] md:hidden cursor-pointer pr-4">
-          <div class="line w-[28px] h-[3px] bg-white rounded-md"></div>
-          <div class="line w-[28px] h-[3px] bg-white rounded-md"></div>
-          <div class="line w-[28px] h-[3px] bg-white rounded-md"></div>        
-        </div>
+          <div id="open"  class="flex flex-col gap-[5px] md:hidden cursor-pointer">
+            <div class="line w-[28px] h-[3px] bg-white rounded-md"></div>
+            <div class="line w-[28px] h-[3px] bg-white rounded-md"></div>
+            <div class="line w-[28px] h-[3px] bg-white rounded-md"></div>        
+          </div>
         
-        <nav class=" items-center hidden md:flex ">
+        <nav class=" items-center hidden md:flex">
           <ul class="flex flex-col md:flex-row gap-3 font-light md:w-auto md:flex md:gap-10 text-lg">
             <li class="transition-all group">
               <a href="./">
@@ -40,6 +39,11 @@
             </li>
           </ul>
         </nav>
+        </div>
+
+        <div class="hidden md:flex items-center  group relative  rounded-lg transition-all duration-700 font-poppins">
+          <a class=" px-10 py-2 rounded-lg border-2 border-white transition-all duration-700 md:text-lg text-white hover:text-offblack hover:bg-white" href="">Contato</a>
+        </div>
       </div>
       
     </div>
@@ -70,48 +74,56 @@
 
 <script>
 
-// Selecionando o elemento de cabeçalho
+document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
-
-  // Variável para armazenar a posição atual do scroll
   let lastScrollTop = 0;
 
-  // Função para verificar o movimento do scroll
-  function onScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  // Função para aplicar as transições
+  const applyTransition = (styles) => {
+    Object.assign(header.style, styles);
+  };
 
-      // Verifica se o scroll está indo para cima ou para baixo
-      if (scrollTop > lastScrollTop) {
-          // Scroll para baixo
-          if (header && scrollTop > header.offsetHeight) {
-              header.style.transition = "transform 0.6s ease-out, opacity 0.6s ease-out, background-color 0.6s ease-out";
-              header.style.transform = "translateY(-100%)"; // Deslocamento para cima
-              header.style.opacity = "0";
-              header.style.backgroundColor = "transparent"; // Removendo a cor de fundo quando desaparecer
-          }
-      } else {
-          // Scroll para cima
-          if (scrollTop === 0 && header) {
-              header.style.transition = "transform 0.2s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out"; // Transição mais rápida ao retornar ao topo
-              header.style.transform = "translateY(0%)"; // Retorna à posição original
-              header.style.opacity = "1";
-              header.style.position = ""; // Remover a posição fixa quando estiver no topo
-              header.style.backgroundColor = "transparent"; // Removendo o bg black quando estiver no topo
-          } else if (header) {
-              header.style.transition = "transform 0.4s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out";
-              header.style.transform = "translateY(0%)"; // Garante que o cabeçalho esteja na posição correta ao rolar para cima
-              header.style.opacity = "1";
-              header.style.position = "fixed";
-              header.style.backgroundColor = "black"; // Definindo o bg black quando o cabeçalho está fixo
-          }
+  // Função para tratar o scroll
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      if (header && scrollTop > header.offsetHeight) {
+        applyTransition({
+          transition: "transform 0.6s ease-out, opacity 0.6s ease-out, background-color 0.6s ease-out",
+          transform: "translateY(-100%)",
+          opacity: "0",
+          backgroundColor: "transparent"
+        });
       }
+    } else {
+      if (scrollTop === 0 && header) {
+        applyTransition({
+          transition: "transform 0.2s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, margin-top 0.8s ease-in-out",
+          transform: "translateY(0%)",
+          opacity: "1",
+          position: "",
+          backgroundColor: "transparent",
+          marginTop: "0"
+        });
+      } else if (header) {
+        applyTransition({
+          transition: "transform 0.4s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, margin-top 0.8s ease-in-out",
+          transform: "translateY(0%)",
+          opacity: "1",
+          position: "fixed",
+          backgroundColor: "black",
+          marginTop: "14px"
+        });
+      }
+    }
 
-      // Atualiza a posição do último scroll
-      lastScrollTop = scrollTop;
-  }
+    lastScrollTop = scrollTop;
+  };
+
   // Adiciona um ouvinte de evento de rolagem (scroll) ao documento
-  document.addEventListener("scroll", onScroll);
-
+  document.addEventListener("scroll", handleScroll);
+});
 
 
     document.getElementById('open')?.addEventListener('click', () => {
