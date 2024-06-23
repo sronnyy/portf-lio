@@ -17,9 +17,8 @@ import Star from "./Star.astro";
     <div class="flex flex-col gap-16">
       <div class="flex flex-col">
         <div class="container flex flex-col gap-4">
-          <div
-            class="font-poppins font-light flex justify-between items-center"
-          >
+
+          <div class="font-poppins font-light flex justify-between items-center">
             <div class="text-offblack border-b border-offblack">
               <h3 class="text-md font-light tracking-wide text-center">
                 Social media
@@ -27,6 +26,7 @@ import Star from "./Star.astro";
             </div>
             <h4 class="text-[10px] font-extralight">By: RonnyD</h4>
           </div>
+
           <div class="">
             <Slide />
           </div>
@@ -37,53 +37,5 @@ import Star from "./Star.astro";
     </div>
   </div>
 
-  <script>
-    import Swiper from "swiper/bundle";
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const [divA, divB, buttonPrev, buttonNext] = [
-        ".div-a",
-        ".div-b",
-        ".button-prev",
-        ".button-next",
-      ].map((selector) => document.querySelector(selector) as HTMLElement);
-
-      const swiper1 = new Swiper(".mySwiper1", {
-        slidesPerView: 1,
-        loop: true,
-        spaceBetween: 20,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        speed: 2000,
-        navigation: {
-          nextEl: ".button-next",
-          prevEl: ".button-prev",
-        },
-      });
-
-      const updateSlideState = () => {
-        const isFirstSlide = swiper1.activeIndex === 0;
-        const isLastSlide = swiper1.activeIndex === swiper1.slides.length - 1;
-
-        divA.classList.toggle("hidden", !isFirstSlide);
-        divB.classList.toggle("hidden", isFirstSlide);
-        buttonPrev.classList.toggle("pointer-events-none", isFirstSlide);
-        buttonNext.classList.toggle("pointer-events-none", isLastSlide);
-
-        buttonPrev.style.opacity = isFirstSlide ? "0.5" : "1";
-        buttonNext.style.opacity = isLastSlide ? "0.5" : "1";
-      };
-
-      swiper1.on("slideChange", updateSlideState);
-      swiper1.on("reachBeginning", () =>
-        buttonPrev.classList.add("pointer-events-none")
-      );
-      swiper1.on("reachEnd", () =>
-        buttonNext.classList.add("pointer-events-none")
-      );
-      updateSlideState();
-    });
-  </script>
+  
 </section>
