@@ -24,22 +24,5 @@
   
   <script>
 
-    import SimpleParallax from 'simple-parallax-js';
 
-    // Selecionando os elementos com a classe 'thumbnail'
-    const images = document.querySelectorAll('.thumbnail');
-
-    // Iterando sobre os elementos e aplicando o efeito de parallax individualmente
-    images.forEach(image => {
-      // Verificando se o elemento é realmente um HTMLElement antes de aplicar o efeito de parallax
-      if (image instanceof HTMLElement) {
-        // Aplicando o efeito de parallax em cada imagem
-        new SimpleParallax(image, {
-          scale: 1.5,
-        });
-
-        // Adicionando um console log para verificar se está funcionando
-        console.log('Efeito de parallax aplicado à imagem:', image);
-      }
-    });
   </script>
